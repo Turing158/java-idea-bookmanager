@@ -16,6 +16,16 @@
 
 #### 使用说明
 
-1.  运行 JFrame/LoginFrm.java
+1. 运行 JFrame/LoginFrm.java
+
+![](./doc/img/login.png)
+
+![](./doc/img/login2.png)
+
+- 管理员  admin 密码 111111
+
+![](./doc/img/login_a.png)
+
+![](./doc/img/admin1.png)
 
 
