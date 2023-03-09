@@ -1,32 +1,19 @@
 package cn.itcast.bookmanager.JFrame;
 
 
-import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-
-import javax.swing.JTextField;
-
 import cn.itcast.bookmanager.dao.UserDao;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-
-import com.mysql.jdbc.Connection;
 import cn.itcast.bookmanager.model.User;
 import cn.itcast.bookmanager.utils.DbUtil;
 import cn.itcast.bookmanager.utils.toolUtil;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
-import javax.swing.JRadioButton;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.sql.Connection;
 
 public class RegFrm extends JFrame {
 	private JFrame jf;

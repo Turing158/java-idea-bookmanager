@@ -1,9 +1,10 @@
 package cn.itcast.bookmanager.dao;
 
-import java.sql.ResultSet;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 import cn.itcast.bookmanager.model.BorrowDetail;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class BorrowDetailDao {
 	

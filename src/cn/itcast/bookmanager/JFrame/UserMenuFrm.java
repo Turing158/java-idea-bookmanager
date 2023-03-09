@@ -1,37 +1,24 @@
 package cn.itcast.bookmanager.JFrame;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.sql.ResultSet;
-import java.util.Vector;
-
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
-
-import cn.itcast.bookmanager.dao.BorrowDetailDao;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-
-import com.mysql.jdbc.Connection;
 import cn.itcast.bookmanager.dao.BookDao;
+import cn.itcast.bookmanager.dao.BorrowDetailDao;
 import cn.itcast.bookmanager.model.Book;
 import cn.itcast.bookmanager.model.BorrowDetail;
 import cn.itcast.bookmanager.utils.DbUtil;
 import cn.itcast.bookmanager.utils.toolUtil;
-import javax.swing.ImageIcon;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.Vector;
 
 
 public class UserMenuFrm extends JFrame {

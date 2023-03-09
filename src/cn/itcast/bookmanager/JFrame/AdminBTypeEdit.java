@@ -1,42 +1,23 @@
 package cn.itcast.bookmanager.JFrame;
 
 
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.sql.ResultSet;
-import java.util.Vector;
-
-import javax.swing.JFrame;
-
 import cn.itcast.bookmanager.dao.BookTypeDao;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-
-import com.mysql.jdbc.Connection;
 import cn.itcast.bookmanager.model.BookType;
 import cn.itcast.bookmanager.utils.DbUtil;
 import cn.itcast.bookmanager.utils.toolUtil;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JLabel;
-
-import java.awt.Font;
-
-import javax.swing.JTextField;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.Vector;
 
 public class AdminBTypeEdit extends JFrame {
 	private JFrame jf;

@@ -1,12 +1,12 @@
 package cn.itcast.bookmanager.dao;
 
 
+import cn.itcast.bookmanager.model.BookType;
+import cn.itcast.bookmanager.utils.toolUtil;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-import cn.itcast.bookmanager.model.BookType;
-import cn.itcast.bookmanager.utils.toolUtil;
 public class BookTypeDao {
 	
 	// 图书类别添加

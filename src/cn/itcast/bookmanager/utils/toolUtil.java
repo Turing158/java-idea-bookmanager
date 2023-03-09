@@ -1,10 +1,10 @@
 package cn.itcast.bookmanager.utils;
 
+import cn.itcast.bookmanager.model.User;
+
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.servlet.http.HttpSession;
-
-import cn.itcast.bookmanager.model.User;
 
 public class toolUtil {
 	public static boolean isEmpty(String str){

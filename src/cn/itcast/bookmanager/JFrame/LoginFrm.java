@@ -1,22 +1,16 @@
 package cn.itcast.bookmanager.JFrame;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
 import cn.itcast.bookmanager.dao.UserDao;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-import com.mysql.jdbc.Connection;
 import cn.itcast.bookmanager.model.User;
 import cn.itcast.bookmanager.utils.DbUtil;
 import cn.itcast.bookmanager.utils.toolUtil;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 public class LoginFrm extends JFrame {
 	public static User currentUser;

@@ -1,44 +1,24 @@
 package cn.itcast.bookmanager.JFrame;
 
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
-import javax.swing.JFrame;
-
-import cn.itcast.bookmanager.dao.BookTypeDao;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-
-import com.mysql.jdbc.Connection;
 import cn.itcast.bookmanager.dao.BookDao;
+import cn.itcast.bookmanager.dao.BookTypeDao;
 import cn.itcast.bookmanager.model.Book;
 import cn.itcast.bookmanager.model.BookType;
 import cn.itcast.bookmanager.utils.DbUtil;
 import cn.itcast.bookmanager.utils.toolUtil;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.TitledBorder;
-
-import java.awt.Color;
-
-import javax.swing.JLabel;
-
-import java.awt.Font;
-
-import javax.swing.JTextField;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.math.BigDecimal;
+import java.sql.Connection;
 import java.sql.ResultSet;
-
-import javax.swing.JComboBox;
-import javax.swing.ImageIcon;
 
 public class AdminBookAdd extends JFrame {
 	private JFrame jf;

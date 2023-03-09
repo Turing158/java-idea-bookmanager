@@ -2,4 +2,5 @@
 /bin/cn/itcast/bookmanager/JFrame/
 /bin/cn/itcast/bookmanager/model/
 /bin/cn/itcast/bookmanager/utils/
-/classes/
+/classes/**/
+
