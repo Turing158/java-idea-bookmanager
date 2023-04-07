@@ -16,7 +16,7 @@
 
 #### 使用说明
 
-1. 运行 JFrame/LoginFrm.java
+1. 运行 JFrame/LoginFrame.java
 
 ![](./doc/img/login1.png)
 
