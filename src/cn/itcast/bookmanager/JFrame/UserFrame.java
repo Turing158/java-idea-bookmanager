@@ -7,7 +7,7 @@ import cn.itcast.bookmanager.dao.impl.BorrowDetailMySQLDaoImpl;
 import cn.itcast.bookmanager.model.Book;
 import cn.itcast.bookmanager.model.BorrowDetail;
 import cn.itcast.bookmanager.utils.DbUtil;
-import cn.itcast.bookmanager.utils.toolUtil;
+import cn.itcast.bookmanager.utils.ToolUtil;
 import com.mysql.jdbc.Connection;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
@@ -198,7 +198,7 @@ public class UserFrame extends JFrame {
 						public void actionPerformed(ActionEvent e) {
 							String bookId = textField_2.getText();
 							String bookName = textField_3.getText();
-							if (toolUtil.isEmpty(bookId) || toolUtil.isEmpty(bookName)) {
+							if (ToolUtil.isEmpty(bookId) || ToolUtil.isEmpty(bookName)) {
 								JOptionPane.showMessageDialog(null, "请选择相关书籍");
 								return;
 							}
@@ -206,7 +206,7 @@ public class UserFrame extends JFrame {
 							borrowDetail.setUserId(LoginFrame.currentUser.getUserId());
 							borrowDetail.setBookId(Integer.parseInt(bookId));
 							borrowDetail.setStatus(1);
-							borrowDetail.setBorrowTime(toolUtil.getTime());
+							borrowDetail.setBorrowTime(ToolUtil.getTime());
 							Connection con = null;
 							try {
 								con = dbUtil.getConnection();
@@ -264,14 +264,14 @@ public class UserFrame extends JFrame {
 			btnBackBook.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					String BorrowStr = textField.getText();
-					if (toolUtil.isEmpty(BorrowStr)) {
+					if (ToolUtil.isEmpty(BorrowStr)) {
 						JOptionPane.showMessageDialog(null, "请选择未还的书籍");
 						return;
 					}
 					BorrowDetail detail = new BorrowDetail();
 					detail.setBorrowId(Integer.parseInt(BorrowStr));
 					detail.setStatus(2);
-					detail.setReturnTime(toolUtil.getTime());
+					detail.setReturnTime(ToolUtil.getTime());
 					Connection con = null;
 					try {
 						con = dbUtil.getConnection();
@@ -359,9 +359,9 @@ public class UserFrame extends JFrame {
 				if (status == 2) {
 					rowData.add("已还");
 				}
-				rowData.add(toolUtil.getDateByTime(list.getLong("borrow_time")));
+				rowData.add(ToolUtil.getDateByTime(list.getLong("borrow_time")));
 				if (status == 2) {
-					rowData.add(toolUtil.getDateByTime(list.getLong("return_time")));
+					rowData.add(ToolUtil.getDateByTime(list.getLong("return_time")));
 				}
 				model.addRow(rowData);
 			}

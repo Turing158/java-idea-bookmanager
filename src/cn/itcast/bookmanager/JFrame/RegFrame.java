@@ -4,7 +4,7 @@ package cn.itcast.bookmanager.JFrame;
 import cn.itcast.bookmanager.dao.UserDao;
 import cn.itcast.bookmanager.model.User;
 import cn.itcast.bookmanager.utils.DbUtil;
-import cn.itcast.bookmanager.utils.toolUtil;
+import cn.itcast.bookmanager.utils.ToolUtil;
 import com.mysql.jdbc.Connection;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
@@ -68,7 +68,7 @@ public class RegFrame extends JFrame {
 			public void focusLost(FocusEvent e) {
 				
 				String text = textField.getText();
-				if(toolUtil.isEmpty(text)){
+				if(ToolUtil.isEmpty(text)){
 					usernameMes.setText("用户名不能为空");
 					usernameMes.setForeground(Color.RED);
 				}else{
@@ -96,7 +96,7 @@ public class RegFrame extends JFrame {
 			@Override
 			public void focusLost(FocusEvent e) {	
 				String pwd=textField_1.getText();
-				if(toolUtil.isEmpty(pwd)){
+				if(ToolUtil.isEmpty(pwd)){
 					passwordMes.setText("密码不能为空");
 					passwordMes.setForeground(Color.RED);
 				}else{
@@ -136,7 +136,7 @@ public class RegFrame extends JFrame {
 			@Override
 			public void focusLost(FocusEvent e) {
 				String phone=textField_2.getText();
-				if(toolUtil.isEmpty(phone)){
+				if(ToolUtil.isEmpty(phone)){
 					phoneMes.setText("手机号不能为空");
 					phoneMes.setForeground(Color.RED);
 				}else{
@@ -213,7 +213,7 @@ public class RegFrame extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String code=textField_3.getText();
-				if(toolUtil.isEmpty(code)){
+				if(ToolUtil.isEmpty(code)){
 					JOptionPane.showMessageDialog(null, "请输入验证码");
 				}else{
 					if(code.equalsIgnoreCase(vcode.getCode())){
@@ -263,7 +263,7 @@ public class RegFrame extends JFrame {
 		}else{
 			sex=rdbtnNewRadioButton_1.getText();
 		}
-		if (toolUtil.isEmpty(username) || toolUtil.isEmpty(password)||toolUtil.isEmpty(phone)) {
+		if (ToolUtil.isEmpty(username) || ToolUtil.isEmpty(password)|| ToolUtil.isEmpty(phone)) {
 			JOptionPane.showMessageDialog(null, "请输入相关信息");
 			return;
 		}

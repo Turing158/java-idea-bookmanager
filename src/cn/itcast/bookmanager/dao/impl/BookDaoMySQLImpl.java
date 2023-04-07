@@ -3,7 +3,7 @@ package cn.itcast.bookmanager.dao.impl;
 
 import cn.itcast.bookmanager.dao.BookDao;
 import cn.itcast.bookmanager.model.Book;
-import cn.itcast.bookmanager.utils.toolUtil;
+import cn.itcast.bookmanager.utils.ToolUtil;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -29,10 +29,10 @@ public class BookDaoMySQLImpl implements BookDao {
 	// 图书信息查询
 	public ResultSet list(Connection con,Book book)throws Exception{
 		StringBuffer sb=new StringBuffer("select b.*,bt.type_name from book b,book_type bt where b.type_id=bt.id");
-		if(!toolUtil.isEmpty(book.getBookName())){
+		if(!ToolUtil.isEmpty(book.getBookName())){
 			sb.append(" and b.book_name like '%"+book.getBookName()+"%'");
 		}
-		if(!toolUtil.isEmpty(book.getAuthor())){
+		if(!ToolUtil.isEmpty(book.getAuthor())){
 			sb.append(" and b.author like '%"+book.getAuthor()+"%'");
 		}
 		if(book.getBookTypeId()!=null && book.getBookTypeId()!=0){
@@ -54,7 +54,7 @@ public class BookDaoMySQLImpl implements BookDao {
 	// 图书信息查询(学生)
 	public ResultSet listCan(Connection con,Book book)throws Exception{
 		StringBuffer sb=new StringBuffer("select b.*,bt.type_name from book b,book_type bt where type_id=bt.id and b.status = 1");
-		if(!toolUtil.isEmpty(book.getBookName())){
+		if(!ToolUtil.isEmpty(book.getBookName())){
 			sb.append(" and b.book_name like '%"+book.getBookName()+"%'");
 		}
 		if(book.getBookId() != null){

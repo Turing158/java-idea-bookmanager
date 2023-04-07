@@ -3,7 +3,7 @@ package cn.itcast.bookmanager.dao.impl;
 
 import cn.itcast.bookmanager.dao.BookTypeDao;
 import cn.itcast.bookmanager.model.BookType;
-import cn.itcast.bookmanager.utils.toolUtil;
+import cn.itcast.bookmanager.utils.ToolUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +30,7 @@ public class BookTypeMySQLDaoImpl implements BookTypeDao {
 	//查询图书类别集合
 	public ResultSet list(Connection con,BookType bookType)throws Exception{
 		StringBuffer sb=new StringBuffer("select * from book_type");
-		if(!toolUtil.isEmpty(bookType.getTypeName())){
+		if(!ToolUtil.isEmpty(bookType.getTypeName())){
 			sb.append(" and type_name like '%"+bookType.getTypeName()+"%'");
 		}
 		PreparedStatement pstmt=con.prepareStatement(sb.toString().replaceFirst("and", "where"));

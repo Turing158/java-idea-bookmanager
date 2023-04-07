@@ -3,7 +3,7 @@ package cn.itcast.bookmanager.JFrame;
 import cn.itcast.bookmanager.dao.UserDao;
 import cn.itcast.bookmanager.model.User;
 import cn.itcast.bookmanager.utils.DbUtil;
-import cn.itcast.bookmanager.utils.toolUtil;
+import cn.itcast.bookmanager.utils.ToolUtil;
 import com.mysql.jdbc.Connection;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
@@ -90,7 +90,7 @@ public class LoginFrame extends JFrame {
 		String userName = userNameText.getText();
 		String password = passwordText.getText();
 		int index = 1; //缺省设置为普通用户
-		if (toolUtil.isEmpty(userName) || toolUtil.isEmpty(password)) {
+		if (ToolUtil.isEmpty(userName) || ToolUtil.isEmpty(password)) {
 			JOptionPane.showMessageDialog(null, "用户名和密码不能为空");
 			return;
 		}
