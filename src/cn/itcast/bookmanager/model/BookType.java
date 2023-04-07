@@ -22,8 +22,13 @@ public class BookType {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
+
 	@Override
 	public String toString() {
-		return this.typeName;
+		return "BookType{" +
+				"typeId=" + typeId +
+				", typeName='" + typeName + '\'' +
+				", remark='" + remark + '\'' +
+				'}';
 	}
 }

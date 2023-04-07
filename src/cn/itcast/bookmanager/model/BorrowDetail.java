@@ -44,4 +44,16 @@ public class BorrowDetail {
 	public void setReturnTime(Long returnTime) {
 		this.returnTime = returnTime;
 	}
+
+	@Override
+	public String toString() {
+		return "BorrowDetail{" +
+				"borrowId=" + borrowId +
+				", userId=" + userId +
+				", bookId=" + bookId +
+				", status=" + status +
+				", borrowTime=" + borrowTime +
+				", returnTime=" + returnTime +
+				'}';
+	}
 }
