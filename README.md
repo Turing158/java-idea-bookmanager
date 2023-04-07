@@ -20,12 +20,9 @@
 
 ![](./doc/img/login.png)
 
-![](./doc/img/login2.png)
+![](./doc/img/login1.png)
 
-- 管理员  admin 密码 111111
+- 用户名  admin 密码 111111
 
-![](./doc/img/login_a.png)
-
-![](./doc/img/admin1.png)
-
+![](./doc/img/userframe.png)
 

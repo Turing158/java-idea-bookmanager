@@ -1,9 +1,9 @@
 package cn.itcast.bookmanager.dao;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 import cn.itcast.bookmanager.model.User;
 import cn.itcast.bookmanager.utils.toolUtil;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.ResultSet;
 public class UserDao {

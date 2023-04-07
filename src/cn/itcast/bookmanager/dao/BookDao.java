@@ -1,12 +1,10 @@
 package cn.itcast.bookmanager.dao;
 
 
-import java.sql.ResultSet;
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 import cn.itcast.bookmanager.model.Book;
-import cn.itcast.bookmanager.utils.toolUtil;
+import com.mysql.jdbc.Connection;
+
+import java.sql.ResultSet;
 
 public interface BookDao {
 	

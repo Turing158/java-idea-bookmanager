@@ -1,24 +1,18 @@
 package cn.itcast.bookmanager.JFrame;
 
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
 import cn.itcast.bookmanager.dao.UserDao;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-import com.mysql.jdbc.Connection;
 import cn.itcast.bookmanager.model.User;
 import cn.itcast.bookmanager.utils.DbUtil;
 import cn.itcast.bookmanager.utils.toolUtil;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import com.mysql.jdbc.Connection;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
-public class LoginFrm extends JFrame {
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class LoginFrame extends JFrame {
 	public static User currentUser;
 	private JFrame jf;
 	private JTextField userNameText;
@@ -27,7 +21,7 @@ public class LoginFrm extends JFrame {
 	
 	UserDao userDao = new UserDao();
 	DbUtil dbUtil = new DbUtil();
-	public LoginFrm(){
+	public LoginFrame(){
 				
 		jf=new JFrame("图书管理");
 		jf.getContentPane().setFont(new Font("幼圆", Font.BOLD, 14));
@@ -35,7 +29,7 @@ public class LoginFrm extends JFrame {
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel(new ImageIcon(LoginFrm.class.getResource("/tupian/bg2.png")));
+		JLabel lblNewLabel = new JLabel(new ImageIcon(LoginFrame.class.getResource("/tupian/bg2.png")));
 		lblNewLabel.setBounds(24, 10, 430, 218);
 		jf.getContentPane().add(lblNewLabel);
 		
@@ -79,7 +73,7 @@ public class LoginFrm extends JFrame {
 		jf.getContentPane().add(button_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(LoginFrm.class.getResource("/tupian/adBG3.png")));
+		lblNewLabel_1.setIcon(new ImageIcon(LoginFrame.class.getResource("/tupian/adBG3.png")));
 		lblNewLabel_1.setBounds(0, 0, 484, 429);
 		jf.getContentPane().add(lblNewLabel_1);
 		
@@ -89,7 +83,7 @@ public class LoginFrm extends JFrame {
 	}
 	protected void regUser(ActionEvent e) {
 		jf.setVisible(false);
-		new RegFrm();
+		new RegFrame();
 		
 	}
 	protected void checkLogin(ActionEvent e) {
@@ -116,7 +110,7 @@ public class LoginFrm extends JFrame {
 			} else {
 
 					jf.dispose();
-					new UserMenuFrm();
+					new UserFrame();
 			}
 		} catch (Exception e21) {
 
@@ -139,6 +133,6 @@ public class LoginFrm extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		new LoginFrm();
+		new LoginFrame();
 	}
 }

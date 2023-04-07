@@ -1,7 +1,20 @@
 package cn.itcast.bookmanager.JFrame;
 
-import java.awt.Color;
-import java.awt.Font;
+import cn.itcast.bookmanager.dao.BookDao;
+import cn.itcast.bookmanager.dao.BorrowDetailDao;
+import cn.itcast.bookmanager.dao.impl.BookDaoMySQLImpl;
+import cn.itcast.bookmanager.dao.impl.BorrowDetailMySQLDaoImpl;
+import cn.itcast.bookmanager.model.Book;
+import cn.itcast.bookmanager.model.BorrowDetail;
+import cn.itcast.bookmanager.utils.DbUtil;
+import cn.itcast.bookmanager.utils.toolUtil;
+import com.mysql.jdbc.Connection;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -9,34 +22,8 @@ import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
 
-import cn.itcast.bookmanager.dao.BorrowDetailDao;
-import cn.itcast.bookmanager.dao.impl.BookDaoMySQLImpl;
-import cn.itcast.bookmanager.dao.impl.BorrowDetailMySQLDaoImpl;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-
-import com.mysql.jdbc.Connection;
-import cn.itcast.bookmanager.dao.BookDao;
-import cn.itcast.bookmanager.model.Book;
-import cn.itcast.bookmanager.model.BorrowDetail;
-import cn.itcast.bookmanager.utils.DbUtil;
-import cn.itcast.bookmanager.utils.toolUtil;
-import javax.swing.ImageIcon;
-
-
-public class UserMenuFrm extends JFrame {
+public class UserFrame extends JFrame {
 	private JFrame jf;
 	private JTextField textField;
 	private JTable table;
@@ -57,7 +44,7 @@ public class UserMenuFrm extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JLabel lblNewLabel_3;
-	public UserMenuFrm() {
+	public UserFrame() {
 		jf=new JFrame();
 		jf.setTitle("用户页面");
 		jf.setBounds(250,100,700,902);
@@ -91,7 +78,7 @@ public class UserMenuFrm extends JFrame {
 			lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 18));
 			lblNewLabel_1.setBounds(315, 10, 197, 28);
 			jf.getContentPane().add(lblNewLabel_1);
-			lblNewLabel_1.setText(LoginFrm.currentUser.getUserName());
+			lblNewLabel_1.setText(LoginFrame.currentUser.getUserName());
 			
 			lblNewLabel_2 = new JLabel("欢迎您,");
 			lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 18));
@@ -216,7 +203,7 @@ public class UserMenuFrm extends JFrame {
 								return;
 							}
 							BorrowDetail borrowDetail = new BorrowDetail();
-							borrowDetail.setUserId(LoginFrm.currentUser.getUserId());
+							borrowDetail.setUserId(LoginFrame.currentUser.getUserId());
 							borrowDetail.setBookId(Integer.parseInt(bookId));
 							borrowDetail.setStatus(1);
 							borrowDetail.setBorrowTime(toolUtil.getTime());
@@ -256,7 +243,7 @@ public class UserMenuFrm extends JFrame {
 					panel_3.add(button_2);
 					
 					lblNewLabel_3 = new JLabel("");
-					lblNewLabel_3.setIcon(new ImageIcon(UserMenuFrm.class.getResource("/tupian/uBG.png")));
+					lblNewLabel_3.setIcon(new ImageIcon(UserFrame.class.getResource("/tupian/uBG.png")));
 					lblNewLabel_3.setBounds(0, 0, 684, 864);
 					jf.getContentPane().add(lblNewLabel_3);
 					
@@ -355,7 +342,7 @@ public class UserMenuFrm extends JFrame {
 	private void putDates(BorrowDetail borrowDetail) {
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.setRowCount(0);
-		Integer userId = LoginFrm.currentUser.getUserId();
+		Integer userId = LoginFrame.currentUser.getUserId();
 		Connection con = null;
 		try {
 			con = dbUtil.getConnection();
@@ -414,6 +401,6 @@ public class UserMenuFrm extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		new UserMenuFrm();
+		new UserFrame();
 	}
 }

@@ -1,34 +1,21 @@
 package cn.itcast.bookmanager.JFrame;
 
 
-import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-
-import javax.swing.JTextField;
-
 import cn.itcast.bookmanager.dao.UserDao;
-import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
-
-import com.mysql.jdbc.Connection;
 import cn.itcast.bookmanager.model.User;
 import cn.itcast.bookmanager.utils.DbUtil;
 import cn.itcast.bookmanager.utils.toolUtil;
+import com.mysql.jdbc.Connection;
+import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
-import javax.swing.JRadioButton;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
-public class RegFrm extends JFrame {
+public class RegFrame extends JFrame {
 	private JFrame jf;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -50,7 +37,7 @@ public class RegFrm extends JFrame {
 	UserDao userDao=new UserDao();
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
-	public RegFrm() {
+	public RegFrame() {
 		jf=new JFrame("用户注册");
 		jf.getContentPane().setFont(new Font("幼圆", Font.BOLD, 16));
 		jf.setBounds(600, 250,510, 410);
@@ -245,7 +232,7 @@ public class RegFrm extends JFrame {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
-				new LoginFrm();
+				new LoginFrame();
 			}
 		});
 		button_1.setFont(new Font("幼圆", Font.BOLD, 15));
@@ -259,7 +246,7 @@ public class RegFrm extends JFrame {
 		
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setIcon(new ImageIcon(RegFrm.class.getResource("/tupian/regBG.png")));
+		lblNewLabel.setIcon(new ImageIcon(RegFrame.class.getResource("/tupian/regBG.png")));
 		lblNewLabel.setBounds(0, 0, 494, 372);
 		jf.getContentPane().add(lblNewLabel);
 		
@@ -297,7 +284,7 @@ public class RegFrm extends JFrame {
 			} else {
 				JOptionPane.showMessageDialog(null, "注册成功");
 				jf.dispose();
-				new LoginFrm();
+				new LoginFrame();
 			}
 		} catch (Exception e1) {
 			e1.printStackTrace();
@@ -317,6 +304,6 @@ public class RegFrm extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		new RegFrm();
+		new RegFrame();
 	}
 }
