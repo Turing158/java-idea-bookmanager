@@ -1,12 +1,12 @@
-package cn.itcast.bookmanager.dao;
+package cn.itcast.bookmanager.dao.impl;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 import cn.itcast.bookmanager.model.User;
 import cn.itcast.bookmanager.utils.toolUtil;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.ResultSet;
-public class UserDao {
+public class UserDaoMySQLImpl {
 	
 	public User login(Connection con,User user)throws Exception {
 		User resultUser = null;

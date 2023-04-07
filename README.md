@@ -1,12 +1,12 @@
 # java-idea-bookmanager
 
 #### 介绍
-基于Swing的java 图书管理系统（简版）
+基于Swing的java 图书管理系统（简版）框架程序。
 
 #### 软件架构
 软件架构说明
 
-基于C/S架构,
+基于C/S架构 + Java SWing
 
 #### 安装教程
 

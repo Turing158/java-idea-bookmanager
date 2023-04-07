@@ -35,7 +35,6 @@ public class LoginFrm extends JFrame {
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.getContentPane().setLayout(null);
 
-		
 		JLabel lblNewLabel = new JLabel(new ImageIcon(LoginFrm.class.getResource("/tupian/bg2.png")));
 		lblNewLabel.setBounds(24, 10, 430, 218);
 		jf.getContentPane().add(lblNewLabel);
@@ -60,17 +59,7 @@ public class LoginFrm extends JFrame {
 		passwordText.setBounds(199, 291, 127, 25);
 		jf.getContentPane().add(passwordText);
 		
-		JLabel label_2 = new JLabel("权限：");
-		label_2.setFont(new Font("幼圆", Font.BOLD, 14));
-		label_2.setBounds(144, 328, 45, 29);
-		jf.getContentPane().add(label_2);
-		
-		comboBox = new JComboBox();
-		comboBox.setBounds(199, 332, 127, 25);
-		comboBox.addItem("用户");
-		comboBox.addItem("管理员");
-		jf.getContentPane().add(comboBox);
-		
+
 		JButton button = new JButton("登录");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -106,7 +95,7 @@ public class LoginFrm extends JFrame {
 	protected void checkLogin(ActionEvent e) {
 		String userName = userNameText.getText();
 		String password = passwordText.getText();
-		int index = comboBox.getSelectedIndex();
+		int index = 1; //缺省设置为普通用户
 		if (toolUtil.isEmpty(userName) || toolUtil.isEmpty(password)) {
 			JOptionPane.showMessageDialog(null, "用户名和密码不能为空");
 			return;
@@ -114,29 +103,20 @@ public class LoginFrm extends JFrame {
 		User user = new User();
 		user.setUserName(userName);
 		user.setPassword(password);
-		if (index == 0) {
-			user.setRole(1);
-		} else {
-			user.setRole(2);
-		}
+
+		System.out.println(user);
 		Connection con = null;
 		try {
 			con = dbUtil.getConnection();
-			User login = userDao.login(con, user);
-			currentUser = login;
-			if (login == null) {
+			User loginUser = userDao.login(con, user);
+			System.out.println("login :"+loginUser);
+			currentUser = loginUser;
+			if (loginUser == null) {
 				JOptionPane.showMessageDialog(null, "登录失败");
 			} else {
-				// 权限 1普通 2管理员
-				if (index == 0) {
-					// 学生
+
 					jf.dispose();
 					new UserMenuFrm();
-				} else {
-					// 管理员
-					jf.dispose();
-					new AdminMenuFrm();
-				}
 			}
 		} catch (Exception e21) {
 

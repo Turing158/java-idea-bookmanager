@@ -23,6 +23,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
 import cn.itcast.bookmanager.dao.BorrowDetailDao;
+import cn.itcast.bookmanager.dao.impl.BookDaoMySQLImpl;
+import cn.itcast.bookmanager.dao.impl.BorrowDetailMySQLDaoImpl;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
 import com.mysql.jdbc.Connection;
@@ -43,8 +45,8 @@ public class UserMenuFrm extends JFrame {
 	private DefaultTableModel BookModel;
 	private JButton btnBackBook;
 	DbUtil dbUtil=new DbUtil();
-	BorrowDetailDao bdetailDao=new BorrowDetailDao();
-	BookDao bookDao=new BookDao();
+	BorrowDetailDao bdetailDao=new BorrowDetailMySQLDaoImpl();
+	BookDao bookDao=new BookDaoMySQLImpl();
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_2;
 	private JButton button;

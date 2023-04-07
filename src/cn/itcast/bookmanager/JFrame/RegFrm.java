@@ -317,6 +317,6 @@ public class RegFrm extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//new RegFrm();
+		new RegFrm();
 	}
 }
