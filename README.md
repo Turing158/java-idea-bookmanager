@@ -6,7 +6,7 @@
 #### 软件架构
 软件架构说明
 
-基于C/S架构 + Java SWing
+基于C/S架构 + Java Swing
 
 #### 安装教程
 
@@ -17,8 +17,6 @@
 #### 使用说明
 
 1. 运行 JFrame/LoginFrm.java
-
-![](./doc/img/login.png)
 
 ![](./doc/img/login1.png)
 
