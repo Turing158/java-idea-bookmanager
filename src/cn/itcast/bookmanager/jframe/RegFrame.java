@@ -1,4 +1,4 @@
-package cn.itcast.bookmanager.JFrame;
+package cn.itcast.bookmanager.jframe;
 
 
 import cn.itcast.bookmanager.dao.UserDao;

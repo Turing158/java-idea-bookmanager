@@ -1,4 +1,4 @@
-package cn.itcast.bookmanager.JFrame;
+package cn.itcast.bookmanager.jframe;
 
 import cn.itcast.bookmanager.dao.UserDao;
 import cn.itcast.bookmanager.model.User;
@@ -98,7 +98,7 @@ public class LoginFrame extends JFrame {
 		user.setUserName(userName);
 		user.setPassword(password);
 
-		System.out.println(user);
+		//System.out.println(user);
 		Connection con = null;
 		try {
 			con = dbUtil.getConnection();
