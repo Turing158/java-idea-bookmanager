@@ -124,7 +124,6 @@ public class LoginFrame extends JFrame {
 				e31.printStackTrace();
 			}
 		}
-		
 	}
 	public static void main(String[] args) {
 		try {

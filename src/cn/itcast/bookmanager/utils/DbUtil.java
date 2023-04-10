@@ -7,7 +7,7 @@ public class DbUtil {
 	private String dbDriver = "com.mysql.jdbc.Driver";
 	private String dbUrl = "jdbc:mysql://localhost:3306/bookmanager?characterEncoding=utf-8";
 	private String dbUserName = "root";
-	private String dbPassword = "123456";
+	private String dbPassword = "123";
 
 	public Connection getConnection()throws Exception{
 	    Class.forName(dbDriver);
