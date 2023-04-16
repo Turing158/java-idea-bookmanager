@@ -1,6 +1,9 @@
+import cn.itcast.bookmanager.utils.CSVUtils;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVRecord;
 import org.junit.Test;
 
-import java.io.InputStream;
+import java.io.*;
 import java.util.Enumeration;
 import java.util.Properties;
 
@@ -22,5 +25,15 @@ public class MainTests {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+    @Test
+    public void fileTest(){
+        System.out.println("hello test");
+        try{
+            System.out.println(CSVUtils.getUserListFromDataFile());
+            } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
     }
 }
