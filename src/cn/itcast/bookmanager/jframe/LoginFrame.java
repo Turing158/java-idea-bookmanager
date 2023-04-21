@@ -2,6 +2,7 @@ package cn.itcast.bookmanager.jframe;
 
 import cn.itcast.bookmanager.dao.UserDao;
 import cn.itcast.bookmanager.model.User;
+import cn.itcast.bookmanager.util.JFrameUtils;
 import cn.itcast.bookmanager.util.JdbcUtils;
 import cn.itcast.bookmanager.util.ToolUtils;
 import com.mysql.jdbc.Connection;
@@ -110,7 +111,7 @@ public class LoginFrame extends JFrame {
 			} else {
 
 					jf.dispose();
-					new UserFrame();
+				    new UserFrame();
 			}
 		} catch (Exception e21) {
 

@@ -70,6 +70,22 @@ CREATE TABLE `borrowdetail` (
 
 insert  into `borrowdetail`(`id`,`user_id`,`book_id`,`status`,`borrow_time`,`return_time`) values (1,1,2,2,1546414916391,1546414948498),(2,1,3,2,1546414932877,1556417443285),(3,1,2,2,1546416530026,1546416640210),(4,1,1,2,1546565100120,1556334334816),(5,1,4,1,1546565102870,NULL),(8,1,1,1,1556427836809,NULL),(20,1,5,1,1556539946226,NULL),(25,1,12,2,1556845403233,1680867524787),(27,1,6,2,1680867506803,1680867514994),(28,2,6,1,1680875446712,NULL),(29,2,8,1,1680875450808,NULL),(30,1,10,1,1680957684456,NULL);
 
+/*Table structure for table `student` */
+
+DROP TABLE IF EXISTS `student`;
+
+CREATE TABLE `student` (
+  `stu_id` int(11) NOT NULL,
+  `stu_name` varchar(50) DEFAULT NULL,
+  `stu_age` int(11) DEFAULT NULL,
+  `stu_gender` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`stu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `student` */
+
+insert  into `student`(`stu_id`,`stu_name`,`stu_age`,`stu_gender`) values (1,'张三',18,'男'),(2,'李四',19,'女'),(3,'汤姆',20,'男');
+
 /*Table structure for table `user` */
 
 DROP TABLE IF EXISTS `user`;

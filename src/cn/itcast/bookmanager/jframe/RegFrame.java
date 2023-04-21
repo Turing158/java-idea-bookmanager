@@ -26,7 +26,6 @@ public class RegFrame extends JFrame {
 	private JLabel usernameMes;
 	private JLabel passwordMes;
 	private JLabel phoneMes;
-	private ValidCode vcode;
 	private JLabel label_4;
 	private JTextField textField_3;
 	private JButton button;
@@ -193,35 +192,14 @@ public class RegFrame extends JFrame {
 		phoneMes.setFont(new Font("Dialog", Font.BOLD, 15));
 		phoneMes.setBounds(372, 142, 122, 30);
 		jf.getContentPane().add(phoneMes);
-		
-		vcode=new ValidCode();
-		vcode.setLocation(293, 231);
-		jf.getContentPane().add(vcode);
-		
-		label_4 = new JLabel("验证码：");
-		label_4.setForeground(Color.BLACK);
-		label_4.setFont(new Font("幼圆", Font.BOLD, 16));
-		label_4.setBounds(110, 231, 75, 40);
-		jf.getContentPane().add(label_4);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(198, 241, 83, 30);
-		jf.getContentPane().add(textField_3);
+
 		
 		button = new JButton("注册");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String code=textField_3.getText();
-				if(ToolUtils.isEmpty(code)){
-					JOptionPane.showMessageDialog(null, "请输入验证码");
-				}else{
-					if(code.equalsIgnoreCase(vcode.getCode())){
+
 						RegCheck(e);
-					}else{
-						JOptionPane.showMessageDialog(null, "验证码错误，请重新输入");
-					}
-				}
+
 			}
 		});
 		button.setFont(new Font("幼圆", Font.BOLD, 15));

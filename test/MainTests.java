@@ -1,4 +1,3 @@
-import cn.itcast.bookmanager.util.CSVUtils;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -23,15 +22,6 @@ public class MainTests {
             }
         }catch(Exception e){
             e.printStackTrace();
-        }
-    }
-    @Test
-    public void fileTest(){
-        System.out.println("hello test");
-        try{
-            System.out.println(CSVUtils.getUserListFromDataFile());
-            } catch (IOException ex) {
-            ex.printStackTrace();
         }
     }
 
