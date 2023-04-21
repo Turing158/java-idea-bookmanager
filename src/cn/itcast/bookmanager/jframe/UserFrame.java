@@ -6,8 +6,8 @@ import cn.itcast.bookmanager.dao.impl.BookDaoMySQLImpl;
 import cn.itcast.bookmanager.dao.impl.BorrowDetailMySQLDaoImpl;
 import cn.itcast.bookmanager.model.Book;
 import cn.itcast.bookmanager.model.BorrowDetail;
-import cn.itcast.bookmanager.utils.DbUtil;
-import cn.itcast.bookmanager.utils.ToolUtil;
+import cn.itcast.bookmanager.util.JdbcUtils;
+import cn.itcast.bookmanager.util.ToolUtils;
 import com.mysql.jdbc.Connection;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
@@ -31,7 +31,7 @@ public class UserFrame extends JFrame {
 	private JTable BookTable;
 	private DefaultTableModel BookModel;
 	private JButton btnBackBook;
-	DbUtil dbUtil=new DbUtil();
+	JdbcUtils dbUtil=new JdbcUtils();
 	BorrowDetailDao bdetailDao=new BorrowDetailMySQLDaoImpl();
 	BookDao bookDao=new BookDaoMySQLImpl();
 	private JLabel lblNewLabel_1;
@@ -198,7 +198,7 @@ public class UserFrame extends JFrame {
 						public void actionPerformed(ActionEvent e) {
 							String bookId = textField_2.getText();
 							String bookName = textField_3.getText();
-							if (ToolUtil.isEmpty(bookId) || ToolUtil.isEmpty(bookName)) {
+							if (ToolUtils.isEmpty(bookId) || ToolUtils.isEmpty(bookName)) {
 								JOptionPane.showMessageDialog(null, "请选择相关书籍");
 								return;
 							}
@@ -206,7 +206,7 @@ public class UserFrame extends JFrame {
 							borrowDetail.setUserId(LoginFrame.currentUser.getUserId());
 							borrowDetail.setBookId(Integer.parseInt(bookId));
 							borrowDetail.setStatus(1);
-							borrowDetail.setBorrowTime(ToolUtil.getTime());
+							borrowDetail.setBorrowTime(ToolUtils.getTime());
 							Connection con = null;
 							try {
 								con = dbUtil.getConnection();
@@ -264,14 +264,14 @@ public class UserFrame extends JFrame {
 			btnBackBook.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					String BorrowStr = textField.getText();
-					if (ToolUtil.isEmpty(BorrowStr)) {
+					if (ToolUtils.isEmpty(BorrowStr)) {
 						JOptionPane.showMessageDialog(null, "请选择未还的书籍");
 						return;
 					}
 					BorrowDetail detail = new BorrowDetail();
 					detail.setBorrowId(Integer.parseInt(BorrowStr));
 					detail.setStatus(2);
-					detail.setReturnTime(ToolUtil.getTime());
+					detail.setReturnTime(ToolUtils.getTime());
 					Connection con = null;
 					try {
 						con = dbUtil.getConnection();
@@ -359,9 +359,9 @@ public class UserFrame extends JFrame {
 				if (status == 2) {
 					rowData.add("已还");
 				}
-				rowData.add(ToolUtil.getDateByTime(list.getLong("borrow_time")));
+				rowData.add(ToolUtils.getDateByTime(list.getLong("borrow_time")));
 				if (status == 2) {
-					rowData.add(ToolUtil.getDateByTime(list.getLong("return_time")));
+					rowData.add(ToolUtils.getDateByTime(list.getLong("return_time")));
 				}
 				model.addRow(rowData);
 			}

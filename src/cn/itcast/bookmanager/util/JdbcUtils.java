@@ -1,9 +1,9 @@
-package cn.itcast.bookmanager.utils;
+package cn.itcast.bookmanager.util;
 
 import com.mysql.jdbc.Connection;
 
 import java.sql.DriverManager;
-public class DbUtil {
+public class JdbcUtils {
 	private String dbDriver = "com.mysql.jdbc.Driver";
 	private String dbUrl = "jdbc:mysql://localhost:3306/bookmanager?characterEncoding=utf-8";
 	private String dbUserName = "root";
@@ -21,3 +21,6 @@ public class DbUtil {
 		}
 	}
 }
+/**
+ * 教材P209
+ */

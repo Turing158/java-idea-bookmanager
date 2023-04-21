@@ -24,5 +24,7 @@
     <orderEntry type="library" name="jgoodies-looks-2.5.3" level="project" />
     <orderEntry type="library" name="jgoodies-common-1.8.1" level="project" />
     <orderEntry type="library" name="commons-csv-1.10.0" level="project" />
+    <orderEntry type="library" name="commons-beanutils-1.9.4" level="project" />
+    <orderEntry type="library" name="commons-logging-1.2" level="project" />
   </component>
 </module>

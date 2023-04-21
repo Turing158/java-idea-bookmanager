@@ -1,9 +1,9 @@
-package cn.itcast.bookmanager.utils;
+package cn.itcast.bookmanager.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ToolUtil {
+public class ToolUtils {
 	public static boolean isEmpty(String str){
 		if(str != null && !"".equals(str.trim())){
 			return false;

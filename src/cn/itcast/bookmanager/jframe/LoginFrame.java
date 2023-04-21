@@ -2,8 +2,8 @@ package cn.itcast.bookmanager.jframe;
 
 import cn.itcast.bookmanager.dao.UserDao;
 import cn.itcast.bookmanager.model.User;
-import cn.itcast.bookmanager.utils.DbUtil;
-import cn.itcast.bookmanager.utils.ToolUtil;
+import cn.itcast.bookmanager.util.JdbcUtils;
+import cn.itcast.bookmanager.util.ToolUtils;
 import com.mysql.jdbc.Connection;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 
@@ -20,7 +20,7 @@ public class LoginFrame extends JFrame {
 	private JComboBox<String> comboBox;
 	
 	UserDao userDao = new UserDao();
-	DbUtil dbUtil = new DbUtil();
+	JdbcUtils dbUtil = new JdbcUtils();
 	public LoginFrame(){
 				
 		jf=new JFrame("图书管理");
@@ -90,7 +90,7 @@ public class LoginFrame extends JFrame {
 		String userName = userNameText.getText();
 		String password = passwordText.getText();
 		int index = 1; //缺省设置为普通用户
-		if (ToolUtil.isEmpty(userName) || ToolUtil.isEmpty(password)) {
+		if (ToolUtils.isEmpty(userName) || ToolUtils.isEmpty(password)) {
 			JOptionPane.showMessageDialog(null, "用户名和密码不能为空");
 			return;
 		}

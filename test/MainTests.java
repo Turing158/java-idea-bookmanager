@@ -1,9 +1,8 @@
-import cn.itcast.bookmanager.utils.CSVUtils;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVRecord;
+import cn.itcast.bookmanager.util.CSVUtils;
 import org.junit.Test;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Properties;
 
@@ -34,6 +33,6 @@ public class MainTests {
             } catch (IOException ex) {
             ex.printStackTrace();
         }
-
     }
+
 }

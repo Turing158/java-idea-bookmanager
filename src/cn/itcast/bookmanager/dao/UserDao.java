@@ -1,7 +1,7 @@
 package cn.itcast.bookmanager.dao;
 
 import cn.itcast.bookmanager.model.User;
-import cn.itcast.bookmanager.utils.ToolUtil;
+import cn.itcast.bookmanager.util.ToolUtils;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -50,7 +50,7 @@ public class UserDao {
 	
 	public ResultSet list(Connection con,User user)throws Exception{
 		StringBuffer sb=new StringBuffer("select * from user where role = 1");
-		if(!ToolUtil.isEmpty(user.getUserName())){
+		if(!ToolUtils.isEmpty(user.getUserName())){
 			sb.append(" and username like '%"+user.getUserName()+"%'");
 		}
 		PreparedStatement pstmt=(PreparedStatement) con.prepareStatement(sb.toString());
