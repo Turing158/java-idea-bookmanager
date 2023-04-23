@@ -39,7 +39,7 @@ public class RegFrame extends JFrame {
 	public RegFrame() {
 		jf=new JFrame("用户注册");
 		jf.getContentPane().setFont(new Font("幼圆", Font.BOLD, 16));
-		jf.setBounds(600, 250,510, 410);
+		jf.setBounds(700, 250,510, 410);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.getContentPane().setLayout(null);
 		
@@ -167,12 +167,12 @@ public class RegFrame extends JFrame {
 		
 		rdbtnNewRadioButton = new JRadioButton("♂男");
 		rdbtnNewRadioButton.setFont(new Font("幼圆", Font.BOLD, 16));
-		rdbtnNewRadioButton.setBounds(198, 192, 58, 23);
+		rdbtnNewRadioButton.setBounds(198, 192, 70, 23);
 		jf.getContentPane().add(rdbtnNewRadioButton);
 		
 		rdbtnNewRadioButton_1 = new JRadioButton("♀女");
 		rdbtnNewRadioButton_1.setFont(new Font("幼圆", Font.BOLD, 16));
-		rdbtnNewRadioButton_1.setBounds(287, 192, 65, 23);
+		rdbtnNewRadioButton_1.setBounds(290, 192, 70, 23);
 		jf.getContentPane().add(rdbtnNewRadioButton_1);
 		ButtonGroup bg=new ButtonGroup();
 		bg.add(rdbtnNewRadioButton_1);
@@ -214,7 +214,7 @@ public class RegFrame extends JFrame {
 			}
 		});
 		button_1.setFont(new Font("幼圆", Font.BOLD, 15));
-		button_1.setBounds(245, 299, 132, 30);
+		button_1.setBounds(245, 299, 142, 30);
 		jf.getContentPane().add(button_1);
 		
 		lblNewLabel_1 = new JLabel("用户注册");
