@@ -92,7 +92,7 @@ public class LoginFrame extends JFrame {
 		String password = passwordText.getText();
 		int index = 1; //缺省设置为普通用户
 		if (ToolUtils.isEmpty(userName) || ToolUtils.isEmpty(password)) {
-			JOptionPane.showMessageDialog(null, "!用户名和密码不能为空!");
+			JOptionPane.showMessageDialog(null, "✖用户名和密码不能为空✖");
 			return;
 		}
 		User user = new User();
