@@ -68,7 +68,7 @@ public class RegFrame extends JFrame {
 				
 				String text = textField.getText();
 				if(ToolUtils.isEmpty(text)){
-					usernameMes.setText("用户名不能为空");
+					usernameMes.setText("✖用户名不能为空✖");
 					usernameMes.setForeground(Color.RED);
 				}else{
 					usernameMes.setText("√");
@@ -96,7 +96,7 @@ public class RegFrame extends JFrame {
 			public void focusLost(FocusEvent e) {	
 				String pwd=textField_1.getText();
 				if(ToolUtils.isEmpty(pwd)){
-					passwordMes.setText("密码不能为空");
+					passwordMes.setText("✖密码不能为空✖");
 					passwordMes.setForeground(Color.RED);
 				}else{
 					boolean flag=pwd.matches("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$");
@@ -165,12 +165,12 @@ public class RegFrame extends JFrame {
 		label_3.setBounds(123, 184, 65, 40);
 		jf.getContentPane().add(label_3);
 		
-		rdbtnNewRadioButton = new JRadioButton("男");
+		rdbtnNewRadioButton = new JRadioButton("♂男");
 		rdbtnNewRadioButton.setFont(new Font("幼圆", Font.BOLD, 16));
 		rdbtnNewRadioButton.setBounds(198, 192, 58, 23);
 		jf.getContentPane().add(rdbtnNewRadioButton);
 		
-		rdbtnNewRadioButton_1 = new JRadioButton("女");
+		rdbtnNewRadioButton_1 = new JRadioButton("♀女");
 		rdbtnNewRadioButton_1.setFont(new Font("幼圆", Font.BOLD, 16));
 		rdbtnNewRadioButton_1.setBounds(287, 192, 65, 23);
 		jf.getContentPane().add(rdbtnNewRadioButton_1);
@@ -194,7 +194,7 @@ public class RegFrame extends JFrame {
 		jf.getContentPane().add(phoneMes);
 
 		
-		button = new JButton("注册");
+		button = new JButton("|注册|");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -206,7 +206,7 @@ public class RegFrame extends JFrame {
 		button.setBounds(120, 299, 75, 30);
 		jf.getContentPane().add(button);
 		
-		button_1 = new JButton("前往登录页面");
+		button_1 = new JButton("|前往登录页面|");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jf.setVisible(false);
@@ -256,11 +256,11 @@ public class RegFrame extends JFrame {
 			con = dbUtil.getConnection();
 			int i = userDao.addUser(con, user);
 			if (i == 2) {
-				JOptionPane.showMessageDialog(null, "该用户名已存在,请重新注册");
+				JOptionPane.showMessageDialog(null, "✖该用户名已存在,请重新注册✖");
 			} else if (i == 0) {
-				JOptionPane.showMessageDialog(null, "注册失败");
+				JOptionPane.showMessageDialog(null, "✖注册失败✖");
 			} else {
-				JOptionPane.showMessageDialog(null, "注册成功");
+				JOptionPane.showMessageDialog(null, "✔注册成功✔");
 				jf.dispose();
 				new LoginFrame();
 			}

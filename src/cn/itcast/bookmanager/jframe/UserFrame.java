@@ -46,7 +46,7 @@ public class UserFrame extends JFrame {
 	private JLabel lblNewLabel_3;
 	public UserFrame() {
 		jf=new JFrame();
-		jf.setTitle("用户页面");
+		jf.setTitle("☺用户页面☺");
 		jf.setBounds(250,100,700,902);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.getContentPane().setLayout(null);
@@ -80,9 +80,9 @@ public class UserFrame extends JFrame {
 			jf.getContentPane().add(lblNewLabel_1);
 			lblNewLabel_1.setText(LoginFrame.currentUser.getUserName());
 			
-			lblNewLabel_2 = new JLabel("欢迎您,");
+			lblNewLabel_2 = new JLabel("☺欢迎您,");
 			lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 18));
-			lblNewLabel_2.setBounds(254, 11, 258, 28);
+			lblNewLabel_2.setBounds(235, 11, 258, 28);
 			jf.getContentPane().add(lblNewLabel_2);
 			
 			JPanel panel = new JPanel();
@@ -101,14 +101,14 @@ public class UserFrame extends JFrame {
 			panel.add(textField);
 			textField.setColumns(10);
 			
-			btnBackBook = new JButton("还书");
+			btnBackBook = new JButton("|还书|");
 			btnBackBook.setFont(new Font("Dialog", Font.BOLD, 15));
 			btnBackBook.setBounds(299, 25, 85, 31);
 			panel.add(btnBackBook);
 			
-			button = new JButton("退出系统");
+			button = new JButton("|退出系统|");
 			button.setFont(new Font("Dialog", Font.BOLD, 15));
-			button.setBounds(407, 25, 103, 31);
+			button.setBounds(420, 25, 103, 31);
 			panel.add(button);
 			
 			panel_2 = new JPanel();
@@ -122,7 +122,7 @@ public class UserFrame extends JFrame {
 			textField_1.setBounds(252, 23, 135, 27);
 			panel_2.add(textField_1);
 			
-			button_1 = new JButton("查询");
+			button_1 = new JButton("|查询|");
 			button_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int index = comboBox.getSelectedIndex();
@@ -192,7 +192,7 @@ public class UserFrame extends JFrame {
 					textField_3.setBounds(339, 34, 135, 27);
 					panel_3.add(textField_3);
 					
-					JButton button_2 = new JButton("借书");
+					JButton button_2 = new JButton("|借书|");
 					//借书
 					button_2.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -214,20 +214,20 @@ public class UserFrame extends JFrame {
 								//先查询是否有该书
 								ResultSet list = bdetailDao.list(con, borrowDetail);
 								while(list.next()){
-									JOptionPane.showMessageDialog(null, "该书已在借,请先还再借");
+									JOptionPane.showMessageDialog(null, "✖该书已在借,请先还再借✖");
 									return;
 								}
 								int i = bdetailDao.add(con, borrowDetail);
 								if (i == 1) {
-									JOptionPane.showMessageDialog(null, "借书成功");
+									JOptionPane.showMessageDialog(null, "✔借书成功✔");
 									putDates(new BorrowDetail());
 								} else {
-									JOptionPane.showMessageDialog(null, "借书失败");
+									JOptionPane.showMessageDialog(null, "✖借书失败✖");
 								}
 							} catch (Exception e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
-								JOptionPane.showMessageDialog(null, "借书异常");
+								JOptionPane.showMessageDialog(null, "✖借书异常✖");
 							}finally{
 								try {
 									dbUtil.closeCon(con);
@@ -256,7 +256,7 @@ public class UserFrame extends JFrame {
 			
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "欢迎再次使用");
+					JOptionPane.showMessageDialog(null, "☺欢迎再次使用☺");
 					jf.dispose();
 				}
 			});
@@ -277,13 +277,13 @@ public class UserFrame extends JFrame {
 						con = dbUtil.getConnection();
 						int i = bdetailDao.returnBook(con, detail);
 						if (i == 1) {
-							JOptionPane.showMessageDialog(null, "还书成功");
+							JOptionPane.showMessageDialog(null, "✔还书成功✔");
 						} else {
-							JOptionPane.showMessageDialog(null, "还书失败");
+							JOptionPane.showMessageDialog(null, "✖还书失败✖");
 						}
 					} catch (Exception e1) {
 						e1.printStackTrace();
-						JOptionPane.showMessageDialog(null, "还书异常");
+						JOptionPane.showMessageDialog(null, "✖还书异常✖");
 					}finally{
 						try {
 							dbUtil.closeCon(con);

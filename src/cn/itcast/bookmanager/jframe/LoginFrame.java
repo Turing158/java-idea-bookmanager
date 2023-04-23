@@ -55,7 +55,7 @@ public class LoginFrame extends JFrame {
 		jf.getContentPane().add(passwordText);
 		
 
-		JButton button = new JButton("登录");
+		JButton button = new JButton("|登录|");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				checkLogin(e);
@@ -64,7 +64,7 @@ public class LoginFrame extends JFrame {
 		button.setBounds(153, 377, 65, 29);
 		jf.getContentPane().add(button);
 		
-		JButton button_1 = new JButton("注册");
+		JButton button_1 = new JButton("|注册|");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				regUser(e);
@@ -92,7 +92,7 @@ public class LoginFrame extends JFrame {
 		String password = passwordText.getText();
 		int index = 1; //缺省设置为普通用户
 		if (ToolUtils.isEmpty(userName) || ToolUtils.isEmpty(password)) {
-			JOptionPane.showMessageDialog(null, "用户名和密码不能为空");
+			JOptionPane.showMessageDialog(null, "!用户名和密码不能为空!");
 			return;
 		}
 		User user = new User();
@@ -107,7 +107,7 @@ public class LoginFrame extends JFrame {
 			System.out.println("login :"+loginUser);
 			currentUser = loginUser;
 			if (loginUser == null) {
-				JOptionPane.showMessageDialog(null, "登录失败");
+				JOptionPane.showMessageDialog(null, "✖登录失败✖");
 			} else {
 
 					jf.dispose();
@@ -116,7 +116,7 @@ public class LoginFrame extends JFrame {
 		} catch (Exception e21) {
 
 			e21.printStackTrace();
-			JOptionPane.showMessageDialog(null, "登录异常");
+			JOptionPane.showMessageDialog(null, "✖登录异常✖");
 		} finally {
 			try {
 				dbUtil.closeCon(con);
